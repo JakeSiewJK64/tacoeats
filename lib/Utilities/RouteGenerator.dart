@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tacoeats/FirstPage/FirstPage.dart';
-import 'package:tacoeats/SecondPage/SecondPage.dart';
+import 'package:tacoeats/ui/FirstPage/FirstPage.dart';
+import 'package:tacoeats/ui/SecondPage/SecondPage.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
