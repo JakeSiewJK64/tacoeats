@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../SecondPage/SecondPage.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -18,10 +17,8 @@ class FirstPage extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () => {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => (SecondPage(data: 'text'))),
-                      ),
+                      Navigator.of(context)
+                          .pushNamed('/second', arguments: 'hello from first'),
                     },
                 child: const Text('Go to Second')),
           ],

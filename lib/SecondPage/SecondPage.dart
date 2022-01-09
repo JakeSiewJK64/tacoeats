@@ -16,8 +16,8 @@ class SecondPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text('Second Page', style: TextStyle(fontSize: 50)),
-            Text(data, style: TextStyle(fontSize: 20)),
+            const Text('Second Page', style: TextStyle(fontSize: 50)),
+            Text(data, style: const TextStyle(fontSize: 20)),
           ],
         ),
       ),
