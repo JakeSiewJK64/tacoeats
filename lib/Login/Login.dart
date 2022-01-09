@@ -9,7 +9,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      child: Text(
+      child: const Text(
         "I AM LOGIN",
         style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,
