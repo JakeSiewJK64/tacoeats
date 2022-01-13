@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import '../shared/bottomNav.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _FirstPage();
+}
+
+class _FirstPage extends State<FirstPage>
+    with TickerProviderStateMixin<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +18,6 @@ class FirstPage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             const Text(
               'First Page',

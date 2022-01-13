@@ -22,8 +22,6 @@ class _BottomNavbar extends State<BottomNavbar>
   ];
 
   void onTap(int index) {
-    log(index.toString());
-
     setState(() {
       selectedIndex = index;
     });
@@ -31,12 +29,7 @@ class _BottomNavbar extends State<BottomNavbar>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: allDestination,
-        onTap: onTap,
-        currentIndex: selectedIndex,
-      ),
-    );
+    return BottomNavigationBar(
+        items: allDestination, onTap: onTap, currentIndex: selectedIndex);
   }
 }
