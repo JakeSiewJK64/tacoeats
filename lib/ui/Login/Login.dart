@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  String text = "I am login";
+  const Login({Key? key}) : super(key: key);
 
-  Login();
-
+  final String text = "I am login";
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: const Text(
-        "I AM LOGIN",
-        style: TextStyle(fontSize: 28),
-        textAlign: TextAlign.center,
+    return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const <Widget>[
+            Text('Login',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50)),
+          ],
+        ),
       ),
     );
   }

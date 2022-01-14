@@ -1,6 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:tacoeats/ui/FirstPage/FirstPage.dart';
+import 'package:tacoeats/ui/Login/Login.dart';
+import 'package:tacoeats/ui/SecondPage/SecondPage.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({Key? key}) : super(key: key);
@@ -9,9 +10,13 @@ class BottomNavbar extends StatefulWidget {
   State<StatefulWidget> createState() => _BottomNavbar();
 }
 
-class _BottomNavbar extends State<BottomNavbar>
-    with TickerProviderStateMixin<BottomNavbar> {
+class _BottomNavbar extends State<BottomNavbar> {
   int selectedIndex = 0;
+  List<Widget> widgetOptions = <Widget>[
+    const FirstPage(),
+    const SecondPage(data: 'welcome'),
+    const Login(),
+  ];
 
   final List<BottomNavigationBarItem> allDestination =
       <BottomNavigationBarItem>[
@@ -26,28 +31,19 @@ class _BottomNavbar extends State<BottomNavbar>
     setState(() {
       selectedIndex = index;
     });
-
-    switch (index) {
-      case 0:
-        Navigator.pushNamed(context, '/');
-        break;
-      case 1:
-        Navigator.pushNamed(context, '/second', arguments: 'welcome');
-        break;
-      case 2:
-        Navigator.pushNamed(context, '/second');
-        break;
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-        selectedFontSize: 15,
-        unselectedFontSize: 10,
-        iconSize: 20,
-        items: allDestination,
-        onTap: onTap,
-        currentIndex: selectedIndex);
+    return Scaffold(
+      body: widgetOptions[selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          selectedFontSize: 15,
+          unselectedFontSize: 10,
+          iconSize: 20,
+          items: allDestination,
+          onTap: onTap,
+          currentIndex: selectedIndex),
+    );
   }
 }

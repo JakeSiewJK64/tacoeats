@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tacoeats/ui/FirstPage/FirstPage.dart';
+import 'package:tacoeats/ui/Profile/Profile.dart';
 import 'package:tacoeats/ui/SecondPage/SecondPage.dart';
+import 'package:tacoeats/ui/shared/bottomNav.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,6 +15,8 @@ class RouteGenerator {
           return MaterialPageRoute(builder: (_) => SecondPage(data: args));
         }
         return _errorRoute();
+      case '/profile':
+        return MaterialPageRoute(builder: (_) => Profile());
       default:
         return _errorRoute();
     }
@@ -21,10 +25,13 @@ class RouteGenerator {
   static Route<dynamic> _errorRoute() {
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Error')),
-        body: const Center(
-          child: Text('Error'),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const <Widget>[Text('Error')],
+          ),
         ),
+        bottomNavigationBar: const BottomNavbar(),
       );
     });
   }

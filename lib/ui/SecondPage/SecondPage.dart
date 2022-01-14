@@ -11,7 +11,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("TacoEats")),
+      appBar: AppBar(title: const Text('Second Page')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
