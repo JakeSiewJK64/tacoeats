@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -24,11 +26,28 @@ class _BottomNavbar extends State<BottomNavbar>
     setState(() {
       selectedIndex = index;
     });
+
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/second', arguments: 'welcome');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/second');
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        items: allDestination, onTap: onTap, currentIndex: selectedIndex);
+        selectedFontSize: 15,
+        unselectedFontSize: 10,
+        iconSize: 20,
+        items: allDestination,
+        onTap: onTap,
+        currentIndex: selectedIndex);
   }
 }
