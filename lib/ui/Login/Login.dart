@@ -12,8 +12,7 @@ class Login extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: const <Widget>[
-            Text('Login',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50)),
+            Image(image: AssetImage('assets/images/rhine_lab.png'))
           ],
         ),
       ),
