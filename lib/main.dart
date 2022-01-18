@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:tacoeats/Utilities/RouteGenerator.dart';
 import 'package:tacoeats/ui/shared/bottomNav.dart';
 
-void main() => runApp(MyApp());
+Future main() async {
+  await dotenv.load(fileName: '.env');
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
