@@ -20,7 +20,7 @@ class _Login extends State<Login> {
 
   Future<http.Response> validateAndSave() {
     return http.post(
-      Uri.parse(dotenv.get('ENDPOINT')),
+      Uri.parse(dotenv.get('ENDPOINT') + '/authenticate'),
       headers: <String, String>{'Content-type': 'application/json'},
       body: jsonEncode(
         <String, String>{'username': email, 'password': password},
